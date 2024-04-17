@@ -1,5 +1,6 @@
 using GTA5Core.Native;
 using GTA5Core.Offsets;
+using System.Numerics;
 
 namespace GTA5Core.Features;
 
@@ -40,6 +41,7 @@ public static class Teleport
     public static void ToWaypoint()
     {
         SetTeleportPosition(GetWaypointPosition());
+        SetTeleportCoords(GetWaypointPosition());
     }
 
     /// <summary>
@@ -48,6 +50,7 @@ public static class Teleport
     public static void ToObjective()
     {
         SetTeleportPosition(GetObjectivePosition());
+        SetTeleportCoords(GetObjectivePosition());
     }
 
     /// <summary>
@@ -65,6 +68,30 @@ public static class Teleport
         SetTeleportPosition(vector3);
     }
 
+    /// <summary>
+    /// 实体传送功能
+    /// </summary>
+    public static bool coords_is_setting;
+    public static void SetTeleportCoords(Vector3 vector3)
+    {
+        if (Globals.IsOnlineMode())
+        {
+            if (!coords_is_setting)
+            {
+                coords_is_setting = true;
+                Globals.Set_Global_Value<float>(4521801 + 946 + 0, vector3.X);
+                Globals.Set_Global_Value<float>(4521801 + 946 + 1, vector3.Y);
+                Globals.Set_Global_Value<float>(4521801 + 946 + 2, vector3.Z);
+                Globals.Set_Global_Value<int>(2672741 + 63 + 22, 0);
+                Globals.Set_Global_Value<int>(4521801 + 943, 20);
+                while (Globals.Get_Global_Value<int>(4521801 + 943) == 20)
+                {
+                }
+                Globals.Set_Global_Value<int>(4521801 + 943, -1);
+                coords_is_setting = false;
+            }
+        }
+    }
     /// <summary>
     /// 坐标传送功能
     /// </summary>
