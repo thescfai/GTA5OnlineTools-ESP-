@@ -22,7 +22,7 @@ public static class STATS
 {
     private const int character = 1574925;
 
-    private const int stat_data_type = 0x026b1578;
+    private const int stat_data_type = 0x026b66d8;
 
     private const int stat_structure = 2749147 + 305;
 
@@ -112,7 +112,7 @@ public static class STATS
     private static async Task STAT_SET_INT1(string statName, int value)
     {
         var hash = GET_STAT_HASH(statName);
-
+        /*
         var oldGetIntHash = Memory.Read<uint>(StatGetIntHash());
         var oldGetIntValue = Globals.Get_Global_Value<int>(stat_get_int_outvalue);
 
@@ -147,6 +147,24 @@ public static class STATS
 
         Globals.Set_Global_Value(stat_set_int_hash, oldSetIntHash);
         Globals.Set_Global_Value(stat_set_int_value, oldSetIntValue);
+        */
+        var oldSetIntHash = Globals.Get_Global_Value<uint>(stat_set_int_hash);
+        var oldSetIntValue = Globals.Get_Global_Value<int>(stat_set_int_value);
+
+        Globals.Set_Global_Value(stat_set_int_hash, hash);
+        Globals.Set_Global_Value(stat_set_int_value, value);
+
+        Globals.Set_Global_Value(stat_structure, 3);
+        Globals.Set_Global_Value(stat_set_int_case, 3);
+
+        do
+        {
+            // 应该主动调用速度会快很多...
+        } while ((Globals.Get_Global_Value<int>(stat_set_int_case) == 3) & (Globals.Get_Global_Value<int>(stat_structure) == 3));
+
+        Globals.Set_Global_Value(stat_set_int_hash, oldSetIntHash);
+        Globals.Set_Global_Value(stat_set_int_value, oldSetIntValue);
+
     }
     /// <summary>
     /// 设置INT类型STAT值（旧方法）
