@@ -66,7 +66,7 @@ public static class Globals
     /// <returns></returns>
     public static bool IsOnlineMode()
     {
-        return Get_Global_Value<int>(114370 + 2366 + 539 + 4321) == 145;
+        return Get_Global_Value<int>(114372 + 2366 + 539 + 4321) == 145;
     }
 
     /// <summary>
