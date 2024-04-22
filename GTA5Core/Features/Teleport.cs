@@ -43,9 +43,11 @@ public static class Teleport
         SetTeleportPosition(GetWaypointPosition());
         SetTeleportCoords(GetWaypointPosition());
         Vector3 vec3;
+        var try_count = 0;
         while (GetPlayerPosition().Z == 21f)
         {
-            for (int i = 1; i <= 8; i++)
+            try_count = try_count + 1;
+            for (int i = 0; i <= 8; i++)
             {
                 vec3.X = GetPlayerPosition().X;
                 vec3.Y = GetPlayerPosition().Y;
@@ -55,7 +57,10 @@ public static class Teleport
                 vec3.Y = GetPlayerPosition().Y;
                 vec3.Z = -255f;
                 SetTeleportCoords(vec3);
-
+            }
+            if (try_count == 5)
+            {
+                break; // 尝试5次后跳出循环,这是为了水面高度...
             }
         }
     }
