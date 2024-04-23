@@ -42,6 +42,27 @@ public static class Teleport
     {
         SetTeleportPosition(GetWaypointPosition());
         SetTeleportCoords(GetWaypointPosition());
+        Vector3 vec3;
+        var try_count = 0;
+        while (GetPlayerPosition().Z == 21f)
+        {
+            try_count = try_count + 1;
+            for (int i = 0; i <= 8; i++)
+            {
+                vec3.X = GetPlayerPosition().X;
+                vec3.Y = GetPlayerPosition().Y;
+                vec3.Z = (i * 100f);
+                SetTeleportCoords(vec3);
+                vec3.X = GetPlayerPosition().X;
+                vec3.Y = GetPlayerPosition().Y;
+                vec3.Z = -255f;
+                SetTeleportCoords(vec3);
+            }
+            if (try_count == 5)
+            {
+                break; // 尝试5次后跳出循环,这是为了水面高度...
+            }
+        }
     }
 
     /// <summary>
@@ -71,14 +92,13 @@ public static class Teleport
     /// <summary>
     /// 实体传送功能
     /// </summary>
-    public static bool coords_is_setting;
     public static void SetTeleportCoords(Vector3 vector3)
     {
         if (Globals.IsOnlineMode())
         {
-            if (!coords_is_setting)
+            var pCPed = Game.GetCPed();
+            if (!Vehicle.IsInVehicle(pCPed))
             {
-                coords_is_setting = true;
                 Globals.Set_Global_Value<float>(4521801 + 946 + 0, vector3.X);
                 Globals.Set_Global_Value<float>(4521801 + 946 + 1, vector3.Y);
                 Globals.Set_Global_Value<float>(4521801 + 946 + 2, vector3.Z);
@@ -88,7 +108,6 @@ public static class Teleport
                 {
                 }
                 Globals.Set_Global_Value<int>(4521801 + 943, -1);
-                coords_is_setting = false;
             }
         }
     }
