@@ -1,6 +1,5 @@
 using GTA5Core.Native;
 using GTA5Core.Offsets;
-using System.Numerics;
 
 namespace GTA5Core.Features;
 
@@ -40,27 +39,29 @@ public static class Teleport
     /// </summary>
     public static void ToWaypoint()
     {
-        SetTeleportPosition(GetWaypointPosition());
-        SetTeleportCoords(GetWaypointPosition());
-        Vector3 vec3;
+        var wayPos = GetWaypointPosition();
+        SetTeleportPosition(wayPos);
+        SetTeleportCoords(wayPos);
+
         var try_count = 0;
-        while (GetPlayerPosition().Z == 21f)
+
+        while (GetPlayerPosition().Z == 21.0f)
         {
-            try_count = try_count + 1;
             for (int i = 0; i <= 8; i++)
             {
-                vec3.X = GetPlayerPosition().X;
-                vec3.Y = GetPlayerPosition().Y;
-                vec3.Z = (i * 100f);
+                var vec3 = GetPlayerPosition();
+                vec3.Z = i * 100.0f;
                 SetTeleportCoords(vec3);
-                vec3.X = GetPlayerPosition().X;
-                vec3.Y = GetPlayerPosition().Y;
+
+                vec3 = GetPlayerPosition();
                 vec3.Z = -255f;
                 SetTeleportCoords(vec3);
             }
-            if (try_count == 5)
+
+            if (++try_count >= 5)
             {
-                break; // 尝试5次后跳出循环,这是为了水面高度...
+                // 尝试5次后跳出循环，这是为了水面高度...
+                break;
             }
         }
     }
@@ -70,8 +71,9 @@ public static class Teleport
     /// </summary>
     public static void ToObjective()
     {
-        SetTeleportPosition(GetObjectivePosition());
-        SetTeleportCoords(GetObjectivePosition());
+        var objPos = GetObjectivePosition();
+        SetTeleportPosition(objPos);
+        SetTeleportCoords(objPos);
     }
 
     /// <summary>
@@ -99,15 +101,17 @@ public static class Teleport
             var pCPed = Game.GetCPed();
             if (!Vehicle.IsInVehicle(pCPed))
             {
-                Globals.Set_Global_Value<float>(4521801 + 946 + 0, vector3.X);
-                Globals.Set_Global_Value<float>(4521801 + 946 + 1, vector3.Y);
-                Globals.Set_Global_Value<float>(4521801 + 946 + 2, vector3.Z);
-                Globals.Set_Global_Value<int>(2672741 + 63 + 22, 0);
-                Globals.Set_Global_Value<int>(4521801 + 943, 20);
+                Globals.Set_Global_Value(4521801 + 946 + 0, vector3.X);
+                Globals.Set_Global_Value(4521801 + 946 + 1, vector3.Y);
+                Globals.Set_Global_Value(4521801 + 946 + 2, vector3.Z);
+                Globals.Set_Global_Value(2672741 + 63 + 22, 0);
+                Globals.Set_Global_Value(4521801 + 943, 20);
+
                 while (Globals.Get_Global_Value<int>(4521801 + 943) == 20)
                 {
                 }
-                Globals.Set_Global_Value<int>(4521801 + 943, -1);
+
+                Globals.Set_Global_Value(4521801 + 943, -1);
             }
         }
     }
