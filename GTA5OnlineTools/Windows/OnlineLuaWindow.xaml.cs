@@ -84,9 +84,23 @@ public partial class OnlineLuaWindow
 
             if (string.IsNullOrEmpty(content))
             {
-                AppendLogger("无法获取服务器Lua列表，返回结果为空");
+                BufferedStream inStream = null;
+
+                string local_index = "GTA5OnlineTools.Files.lua_index_yimmenu.json";
+                if (isUseKiddion)
+                    local_index = "GTA5OnlineTools.Files.lua_index_kiddion.json";
+
+                var assembly = Assembly.GetExecutingAssembly();
+                inStream = new BufferedStream(assembly.GetManifestResourceStream(local_index));
+
+                using StreamReader reader = new(inStream);
+                content = reader.ReadToEnd();
+
+                inStream.Close();
+
+                ClearLogger();
+                AppendLogger("无法连接服务器,Lua索引可能不是最新版本");
                 NotifierHelper.Show(NotifierType.Warning, "无法获取服务器Lua列表，返回结果为空");
-                return;
             }
 
             var result = JsonHelper.JsonDese<List<LuaInfo>>(content);

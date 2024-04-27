@@ -16,7 +16,7 @@ public static class HttpHelper
         {
             var options = new RestClientOptions()
             {
-                MaxTimeout = 20000,
+                MaxTimeout = 5000,
                 ThrowOnAnyError = false
             };
             client = new RestClient(options);
