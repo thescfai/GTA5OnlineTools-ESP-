@@ -26,8 +26,8 @@ jobs:
 
       - name: Sync Lua Index
         run: |
-           cp GTA5OnlineLua/Release/Kiddion.json GTA5OnlineTools/Files/lua_index_kiddion.json
-           cp GTA5OnlineLua/Release/YimMenu.json GTA5OnlineTools/Files/lua_index_yimmenu.json
+           cp GTA5OnlineLua/Release/Kiddion.json GTA5OnlineTools/GTA5OnlineTools/Files/lua_index_kiddion.json
+           cp GTA5OnlineLua/Release/YimMenu.json GTA5OnlineTools/GTA5OnlineTools/Files/lua_index_yimmenu.json
 
       - name: git push
         run: |
