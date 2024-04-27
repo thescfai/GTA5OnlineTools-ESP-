@@ -6,7 +6,7 @@ on:
     - cron: "*/30 * * * *"
 
 jobs:
-  Sync Fallback Lua Index:
+  SyncLuaIndex:
     runs-on: ubuntu-latest
 
     steps:
