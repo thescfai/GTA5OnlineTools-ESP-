@@ -15,11 +15,14 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: GTA5OnlineTools
+          fetch-depth: 1
 
       - name: Checkout GTA5OnlineLua Sources
         uses: actions/checkout@v4
         with:
+          repository: CrazyZhang666/GTA5OnlineLua
           path: GTA5OnlineLua
+          fetch-depth: 1
 
       - name: Sync Lua Index
         run: |
