@@ -50,4 +50,8 @@
         <Resource Include="Assets\Launch.png" />
     </ItemGroup>
 
+    <ItemGroup>
+	<EmbeddedResource Include="Files\lua_index_yimmenu.json" />
+	<EmbeddedResource Include="Files\lua_index_kiddion.json" />
+    </ItemGroup>
 </Project>
