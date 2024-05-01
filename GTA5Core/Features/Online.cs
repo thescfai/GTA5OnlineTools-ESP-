@@ -541,29 +541,25 @@ public static class Online
     }
 
     /// <summary>
-    /// 单人启动某个任务
+    /// 单人启动任务(这应该允许你能完整的玩末日将至)
     /// </summary>
     /// <param name="isEnable"></param>
-    public static void alone_launch_heist(string name) // 一个不够聪明的p2c skid menu尝试反转Alice.lua的偏移量 lol~
+    public static void alone_launch_heist(string name) // https://www.unknowncheats.me/forum/4007046-post4761.html
     {
-        // public by Alice2333
-        // post by https://www.unknowncheats.me/forum/4004717-post4751.html
-        // 某个p2c skid menu我相信你也在看
-        if (name == "fleeca") // 全福银行
+        if (Locals.LocalAddress("fmmc_launcher") != 0)
         {
-            Globals.Set_Global_Value(864505, 1);
+            if (Locals.ReadLocalAddress<int>("fmmc_launcher", 19331 + 34) != 0)
+            {
+                if (Locals.ReadLocalAddress<int>("fmmc_launcher", 19331 + 15) > 1)
+                {
+                    Locals.WriteLocalAddress<int>("fmmc_launcher", 19331 + 15, 1);
+                    Globals.Set_Global_Value<int>(794744 + 4 + 1 + (Locals.ReadLocalAddress<int>("fmmc_launcher", 19331 + 34) * 89) + 69, 1);
+                }
+                Globals.Set_Global_Value<int>(4718592 + 3255 + 1, 1);
+                Globals.Set_Global_Value<int>(4718592 + 176675 + 1, 0);
+                Globals.Set_Global_Value<int>(4718592 + 3252, 1);
+                Globals.Set_Global_Value<int>(4718592 + 3253, 1);
+            }
         }
-        if (name == "act3") // 末日将至
-        {
-            Globals.Set_Global_Value(803718, 1);
-        }
-        if (name == "aggressive") // 名钻赌场豪劫-气势汹汹
-        {
-            Globals.Set_Global_Value(864238, 1);
-        }
-        Globals.Set_Global_Value(4721848, 1);
-        Globals.Set_Global_Value(4895268, 0);
-        Globals.Set_Global_Value(4721844, 1);
-        Globals.Set_Global_Value(4721845, 1);
     }
 }
