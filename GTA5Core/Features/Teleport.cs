@@ -40,6 +40,11 @@ public static class Teleport
     public static void ToWaypoint()
     {
         var wayPos = GetWaypointPosition();
+
+        // 避免误传送
+        if (wayPos == Vector3.Zero)
+            return;
+
         SetTeleportPosition(wayPos);
         TowaypointForceGroundZ(wayPos);         // 更稳定的native传送
     }
@@ -50,6 +55,11 @@ public static class Teleport
     public static void ToObjective()
     {
         var objPos = GetObjectivePosition();
+
+        // 避免误传送
+        if (objPos == Vector3.Zero)
+            return;
+
         SetTeleportPosition(objPos);
         SetTeleportCoords(objPos);
     }

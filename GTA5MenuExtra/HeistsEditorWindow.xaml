@@ -51,6 +51,11 @@
                     Style="{StaticResource NavMenuStyle_Normal}" />
                 <ui:NavMenu
                     Command="{Binding NavigateCommand}"
+                    CommandParameter="AdvanceView"
+                    Content="高级功能"
+                    Style="{StaticResource NavMenuStyle_Normal}" />
+                <ui:NavMenu
+                    Command="{Binding NavigateCommand}"
                     CommandParameter="ContractView"
                     Content="事所合约"
                     Style="{StaticResource NavMenuStyle_Normal}" />
