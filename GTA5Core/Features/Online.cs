@@ -505,61 +505,62 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void KosatkaMissleCooldown(bool isEnable)
     {
-        Globals.Set_Global_Value(Base.Default + 30464, isEnable ? 0 : 60000); // joaat("IH_SUBMARINE_MISSILES_COOLDOWN")
+        Globals.Set_Global_Value(Base.Default + 30464, isEnable ? 0 : 60000);           // joaat("IH_SUBMARINE_MISSILES_COOLDOWN")
     }
 
     /// <summary>
     /// 即时完成fm_mission_controller
+    /// 公寓抢劫 | 末日豪劫 | 名钻赌场豪劫
     /// </summary>
-    /// <param name="isEnable"></param>
-    public static void instant_fm_mission_controller() // 公寓抢劫 | 末日豪劫 | 名钻赌场豪劫
+    public static void InstantFmMissionController()
     {
-        if (Locals.LocalAddress("fm_mission_controller") != 0)
-        {
-            if (Locals.ReadLocalAddress<int>("fm_mission_controller", 0x6510/8) != 0)
-            {
-                Locals.WriteLocalAddress<int>("fm_mission_controller", 0x3DDC0/8, 264666);
-                Locals.WriteLocalAddress<int>("fm_mission_controller", 0x26880/8, 12);
-            }
-        }
+        if (Locals.LocalAddress("fm_mission_controller") == 0)
+            return;
+
+        if (Locals.ReadLocalAddress<int>("fm_mission_controller", 0x6510 / 8) == 0)
+            return;
+
+        Locals.WriteLocalAddress("fm_mission_controller", 0x3DDC0 / 8, 264666);
+        Locals.WriteLocalAddress("fm_mission_controller", 0x26880 / 8, 12);
     }
 
     /// <summary>
     /// 即时完成fm_mission_controller_2020
+    /// 改装铺合约 | 佩里科岛 | 德瑞
     /// </summary>
-    /// <param name="isEnable"></param>
-    public static void instant_fm_mission_controller_2020() // 改装铺合约 | 佩里科岛 | 德瑞
+    public static void InstantFmMissionController_2020()
     {
-        if (Locals.LocalAddress("fm_mission_controller_2020") != 0)
-        {
-            if (Locals.ReadLocalAddress<int>("fm_mission_controller_2020", 0x24FF8/8) != 0)
-            {
-                Locals.WriteLocalAddress<int>("fm_mission_controller_2020", 0x3DDC0/8, 264666);
-                Locals.WriteLocalAddress<int>("fm_mission_controller_2020", 0x62338/8, 9);
-            }
-        }
+        if (Locals.LocalAddress("fm_mission_controller_2020") == 0)
+            return;
+
+        if (Locals.ReadLocalAddress<int>("fm_mission_controller_2020", 0x24FF8 / 8) == 0)
+            return;
+
+        Locals.WriteLocalAddress("fm_mission_controller_2020", 0x3DDC0 / 8, 264666);
+        Locals.WriteLocalAddress("fm_mission_controller_2020", 0x62338 / 8, 9);
     }
 
     /// <summary>
-    /// 单人启动任务(这应该允许你能完整的玩末日将至)
+    /// 单人启动任务（这应该允许你能完整的玩末日将至）
+    /// https://www.unknowncheats.me/forum/4007046-post4761.html
     /// </summary>
-    /// <param name="isEnable"></param>
-    public static void alone_launch_heist(string name) // https://www.unknowncheats.me/forum/4007046-post4761.html
+    public static void AloneLaunchHeist()
     {
-        if (Locals.LocalAddress("fmmc_launcher") != 0)
+        if (Locals.LocalAddress("fmmc_launcher") == 0)
+            return;
+
+        if (Locals.ReadLocalAddress<int>("fmmc_launcher", 19331 + 34) == 0)
+            return;
+
+        if (Locals.ReadLocalAddress<int>("fmmc_launcher", 19331 + 15) > 1)
         {
-            if (Locals.ReadLocalAddress<int>("fmmc_launcher", 19331 + 34) != 0)
-            {
-                if (Locals.ReadLocalAddress<int>("fmmc_launcher", 19331 + 15) > 1)
-                {
-                    Locals.WriteLocalAddress<int>("fmmc_launcher", 19331 + 15, 1);
-                    Globals.Set_Global_Value<int>(794744 + 4 + 1 + (Locals.ReadLocalAddress<int>("fmmc_launcher", 19331 + 34) * 89) + 69, 1);
-                }
-                Globals.Set_Global_Value<int>(4718592 + 3255 + 1, 1);
-                Globals.Set_Global_Value<int>(4718592 + 176675 + 1, 0);
-                Globals.Set_Global_Value<int>(4718592 + 3252, 1);
-                Globals.Set_Global_Value<int>(4718592 + 3253, 1);
-            }
+            Locals.WriteLocalAddress("fmmc_launcher", 19331 + 15, 1);
+            Globals.Set_Global_Value(794744 + 4 + 1 + (Locals.ReadLocalAddress<int>("fmmc_launcher", 19331 + 34) * 89) + 69, 1);
         }
+
+        Globals.Set_Global_Value(4718592 + 3255 + 1, 1);
+        Globals.Set_Global_Value(4718592 + 176675 + 1, 0);
+        Globals.Set_Global_Value(4718592 + 3252, 1);
+        Globals.Set_Global_Value(4718592 + 3253, 1);
     }
 }

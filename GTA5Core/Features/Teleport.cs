@@ -41,9 +41,9 @@ public static class Teleport
     {
         var wayPos = GetWaypointPosition();
         SetTeleportPosition(wayPos);
-        TowaypointForceGroundZ(wayPos); // 更稳定的native传送
+        TowaypointForceGroundZ(wayPos);         // 更稳定的native传送
     }
-    
+
     /// <summary>
     /// 传送到目标点
     /// </summary>
@@ -55,33 +55,37 @@ public static class Teleport
     }
 
     /// <summary>
-    /// 传送到导航点(NATIVE)
+    /// 传送到导航点（Native）
     /// </summary>
-    public static void TowaypointForceGroundZ(Vector3 blip_v3)
+    public static void TowaypointForceGroundZ(Vector3 blipV3)
     {
         Vector3 vec3;
-        vec3.X = blip_v3.X;
-        vec3.Y = blip_v3.Y;
+        vec3.X = blipV3.X;
+        vec3.Y = blipV3.Y;
         vec3.Z = -255;
+
         SetTeleportCoords(vec3);
-        var try_count = 0;
-        while (GetPlayerPosition().Z == 21f) // 21f取决于你的blip的z坐标,详情参考GetBlipPosition函数... // 进入此代码块的条件,人物通常已经在地下...
+
+        var tryCount = 0;
+        // 21f取决于你的blip的z坐标,详情参考GetBlipPosition函数... 
+        // 进入此代码块的条件,人物通常已经在地下...
+        while (GetPlayerPosition().Z == 21f)
         {
-            try_count = try_count + 1;
-            for (int i = 0; i <= 8; i++) // 游戏最高高度通常在800+左右...
+            tryCount++;
+
+            for (var i = 0; i <= 8; i++)        // 游戏最高高度通常在800+左右...
             {
-                vec3.Z = (i * 100f); // 开始强制加载坐标地面...
+                vec3.Z = i * 100f;              // 开始强制加载坐标地面...
                 SetTeleportCoords(vec3);
-                vec3.Z = -255f; // 游戏引擎会因为这个坐标(-211f以下任何)而将你设置到地面,这就是为什么上面需要增加高度来强迫游戏引擎来强制加载z坐标...
+                vec3.Z = -255f;                 // 游戏引擎会因为这个坐标(-211f以下任何)而将你设置到地面,这就是为什么上面需要增加高度来强迫游戏引擎来强制加载z坐标...
                 SetTeleportCoords(vec3);
             }
-            if (try_count == 5)
-            {
-                break; // 这里因为可能是海洋尝试5次将结束此循环...
-            }
+
+            if (tryCount == 5)
+                break;                          // 这里因为可能是海洋尝试5次将结束此循环...
         }
     }
-    
+
     /// <summary>
     /// 传送到Blips
     /// </summary>

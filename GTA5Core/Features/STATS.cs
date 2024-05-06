@@ -100,7 +100,7 @@ public static class STATS
     /// <returns></returns>
     public static async Task STAT_SET_INT(string statName, int value)
     {
-        await STAT_SET_INT1(statName, value);
+        await Task.Run(() => { STAT_SET_INT1(statName, value); });
     }
 
     /// <summary>
@@ -109,45 +109,45 @@ public static class STATS
     /// <param name="statName"></param>
     /// <param name="value"></param>
     /// <returns></returns>
-    private static async Task STAT_SET_INT1(string statName, int value)
+    private static void STAT_SET_INT1(string statName, int value)
     {
         var hash = GET_STAT_HASH(statName);
-        /*
-        var oldGetIntHash = Memory.Read<uint>(StatGetIntHash());
-        var oldGetIntValue = Globals.Get_Global_Value<int>(stat_get_int_outvalue);
 
-        var oldSetIntHash = Globals.Get_Global_Value<uint>(stat_set_int_hash);
-        var oldSetIntValue = Globals.Get_Global_Value<int>(stat_set_int_value);
+        //var oldGetIntHash = Memory.Read<uint>(StatGetIntHash());
+        //var oldGetIntValue = Globals.Get_Global_Value<int>(stat_get_int_outvalue);
 
-        Memory.Write(StatGetIntHash(), hash);
+        //var oldSetIntHash = Globals.Get_Global_Value<uint>(stat_set_int_hash);
+        //var oldSetIntValue = Globals.Get_Global_Value<int>(stat_set_int_value);
 
-        Globals.Set_Global_Value(stat_set_int_hash, hash);
-        Globals.Set_Global_Value(stat_set_int_value, value);
+        //Memory.Write(StatGetIntHash(), hash);
 
-        Globals.Set_Global_Value(stat_get_int_outvalue, value - 1);
+        //Globals.Set_Global_Value(stat_set_int_hash, hash);
+        //Globals.Set_Global_Value(stat_set_int_value, value);
 
-        for (var i = 0; i < 10; i++)
-        {
-            if (Globals.Get_Global_Value<int>(stat_get_int_outvalue) == value)
-                break;
+        //Globals.Set_Global_Value(stat_get_int_outvalue, value - 1);
 
-            if ((Globals.Get_Global_Value<int>(stat_get_int_case) != 9) & (Globals.Get_Global_Value<int>(stat_set_int_case) != 3) & (Globals.Get_Global_Value<int>(stat_structure) != 3))
-                Globals.Set_Global_Value(stat_get_int_case, 9);
-                Globals.Set_Global_Value(stat_structure, 3);
-                Globals.Set_Global_Value(stat_set_int_case, 3);
+        //for (var i = 0; i < 10; i++)
+        //{
+        //    if (Globals.Get_Global_Value<int>(stat_get_int_outvalue) == value)
+        //        break;
 
-            await Task.Delay(100);
+        //    if ((Globals.Get_Global_Value<int>(stat_get_int_case) != 9) & (Globals.Get_Global_Value<int>(stat_set_int_case) != 3) & (Globals.Get_Global_Value<int>(stat_structure) != 3))
+        //        Globals.Set_Global_Value(stat_get_int_case, 9);
+        //    Globals.Set_Global_Value(stat_structure, 3);
+        //    Globals.Set_Global_Value(stat_set_int_case, 3);
 
-            if (i > 5)
-                Globals.Set_Global_Value(stat_get_int_outvalue, value);
-        }
+        //    await Task.Delay(100);
 
-        Memory.Write(StatGetIntHash(), oldGetIntHash);
-        Globals.Set_Global_Value(stat_get_int_outvalue, oldGetIntValue);
+        //    if (i > 5)
+        //        Globals.Set_Global_Value(stat_get_int_outvalue, value);
+        //}
 
-        Globals.Set_Global_Value(stat_set_int_hash, oldSetIntHash);
-        Globals.Set_Global_Value(stat_set_int_value, oldSetIntValue);
-        */
+        //Memory.Write(StatGetIntHash(), oldGetIntHash);
+        //Globals.Set_Global_Value(stat_get_int_outvalue, oldGetIntValue);
+
+        //Globals.Set_Global_Value(stat_set_int_hash, oldSetIntHash);
+        //Globals.Set_Global_Value(stat_set_int_value, oldSetIntValue);
+
         var oldSetIntHash = Globals.Get_Global_Value<uint>(stat_set_int_hash);
         var oldSetIntValue = Globals.Get_Global_Value<int>(stat_set_int_value);
 

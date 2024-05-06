@@ -204,6 +204,14 @@
                     Click="Button_TriggerMiniTank_Click"
                     Content="进入迷你坦克" />
             </WrapPanel>
+            <!--  ////////////////  -->
+            <ui:LabelIcon Content="特殊载具" />
+            <WrapPanel Margin="5,0,5,0">
+                <CheckBox
+                    x:Name="CheckBox_KosatkaMissleCooldown"
+                    Click="CheckBox_KosatkaMissleCooldown_Click"
+                    Content="移除虎鲸导弹冷却" />
+            </WrapPanel>
         </StackPanel>
     </UniformGrid>
 

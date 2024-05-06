@@ -249,4 +249,9 @@ public partial class OnlineOptionView : UserControl
         await Task.Delay(100);
         Online.TriggerMiniTank(false);
     }
+
+    private void CheckBox_KosatkaMissleCooldown_Click(object sender, RoutedEventArgs e)
+    {
+        Online.KosatkaMissleCooldown(CheckBox_KosatkaMissleCooldown.IsChecked == true);
+    }
 }

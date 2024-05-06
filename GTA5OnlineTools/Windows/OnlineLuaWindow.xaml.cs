@@ -82,21 +82,20 @@ public partial class OnlineLuaWindow
             else
                 content = await HttpHelper.DownloadString(yimMenu);
 
+            // 无网络情况下加载本地lua下载信息
             if (string.IsNullOrEmpty(content))
             {
-                BufferedStream inStream = null;
-
                 string local_index = "GTA5OnlineTools.Files.lua_index_yimmenu.json";
                 if (isUseKiddion)
                     local_index = "GTA5OnlineTools.Files.lua_index_kiddion.json";
 
                 var assembly = Assembly.GetExecutingAssembly();
-                inStream = new BufferedStream(assembly.GetManifestResourceStream(local_index));
+                var stream = assembly.GetManifestResourceStream(local_index);
 
-                using StreamReader reader = new(inStream);
+                using var reader = new StreamReader(stream);
                 content = reader.ReadToEnd();
 
-                inStream.Close();
+                stream.Close();
 
                 ClearLogger();
                 AppendLogger("无法连接服务器,Lua索引可能不是最新版本");
