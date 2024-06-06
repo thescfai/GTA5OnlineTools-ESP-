@@ -121,9 +121,9 @@ public partial class PlayerListView : UserControl
             var armor = Memory.Read<float>(pCPed + CPed.Armor);
             var noRagdoll = Memory.Read<byte>(pCPed + CPed.Ragdoll);
 
-            var rank = Globals.Get_Global_Value<int>(1853988 + 1 + i * 867 + 205 + 6);
-            var money = Globals.Get_Global_Value<long>(1853988 + 1 + i * 867 + 205 + 56);     // _MPPLY_STAT_SET_INT(joaat("MPPLY_GLOBALXP"), iParam0);
-            var cash = Globals.Get_Global_Value<long>(1853988 + 1 + i * 867 + 205 + 3);
+            var rank = Globals.Get_Global_Value<int>(1845263 + 1 + i * 877 + 205 + 6);
+            var money = Globals.Get_Global_Value<long>(1845263 + 1 + i * 877 + 205 + 56);     // _MPPLY_STAT_SET_INT(joaat("MPPLY_GLOBALXP"), iParam0);
+            var cash = Globals.Get_Global_Value<long>(1845263 + 1 + i * 877 + 205 + 3);
 
             var rid = Memory.Read<long>(pCPlayerInfo + CPlayerInfo.RockstarID);
             var name = Memory.ReadString(pCPlayerInfo + CPlayerInfo.Name, 20);
