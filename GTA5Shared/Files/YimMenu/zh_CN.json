@@ -1107,6 +1107,8 @@
   "REPAIR_PV_DESC": "修复当前个人载具",
   "REPLACE_GAME_MATCHMAKING": "替换游戏匹配",
   "REPLACE_GAME_MATCHMAKING_DESC": "这将使用自定义游戏匹配替换默认游戏匹配,游戏将使用此处设置的过滤器和排序来进行匹配",
+  "REPORT_SPAM": "广告机联合识别计划",
+  "REPORT_SPAM_DESC": "检测到广告机时自动上报广告机信息,为所有开启此功能的用户增强广告机识别能力,对抗广告词的频繁变化.\n匿名信息收集,您的个人账号和设备信息不会被上传.",
   "REQUEST_ACIDBIKE": "请求致幻剂实验室摩托",
   "REQUEST_ACIDBIKE_DESC": "请求致幻剂实验室送货摩托",
   "REQUEST_ACIDLAB": "请求致幻剂实验室",
