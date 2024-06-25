@@ -63,15 +63,15 @@ public static class Online
     public static void AntiAFK(bool isEnable)
     {
         // STATS::PLAYSTATS_IDLE_KICK
-        Globals.Set_Global_Value(Base.Default + 87, isEnable ? 99999999 : 120000);        // 120000     joaat("IDLEKICK_WARNING1") 
-        Globals.Set_Global_Value(Base.Default + 88, isEnable ? 99999999 : 300000);        // 300000     joaat("IDLEKICK_WARNING2")
-        Globals.Set_Global_Value(Base.Default + 89, isEnable ? 99999999 : 600000);        // 600000     joaat("IDLEKICK_WARNING3")
-        Globals.Set_Global_Value(Base.Default + 90, isEnable ? 99999999 : 900000);        // 900000     joaat("IDLEKICK_KICK")
+        Globals.Set_Global_Value(Base.Default + 84, isEnable ? 99999999 : 120000);        // 120000     joaat("IDLEKICK_WARNING1") 
+        Globals.Set_Global_Value(Base.Default + 85, isEnable ? 99999999 : 300000);        // 300000     joaat("IDLEKICK_WARNING2")
+        Globals.Set_Global_Value(Base.Default + 86, isEnable ? 99999999 : 600000);        // 600000     joaat("IDLEKICK_WARNING3")
+        Globals.Set_Global_Value(Base.Default + 87, isEnable ? 99999999 : 900000);        // 900000     joaat("IDLEKICK_KICK")
 
-        Globals.Set_Global_Value(Base.Default + 8426, isEnable ? 2000000000 : 30000);     // 30000      joaat("ConstrainedKick_Warning1")
-        Globals.Set_Global_Value(Base.Default + 8427, isEnable ? 2000000000 : 60000);     // 60000      joaat("ConstrainedKick_Warning2")
-        Globals.Set_Global_Value(Base.Default + 8428, isEnable ? 2000000000 : 90000);     // 90000      joaat("ConstrainedKick_Warning3")
-        Globals.Set_Global_Value(Base.Default + 8429, isEnable ? 2000000000 : 120000);    // 120000     joaat("ConstrainedKick_Kick")
+        Globals.Set_Global_Value(Base.Default + 8413, isEnable ? 2000000000 : 30000);     // 30000      joaat("ConstrainedKick_Warning1")
+        Globals.Set_Global_Value(Base.Default + 8414, isEnable ? 2000000000 : 60000);     // 60000      joaat("ConstrainedKick_Warning2")
+        Globals.Set_Global_Value(Base.Default + 8415, isEnable ? 2000000000 : 90000);     // 90000      joaat("ConstrainedKick_Warning3")
+        Globals.Set_Global_Value(Base.Default + 8416, isEnable ? 2000000000 : 120000);    // 120000     joaat("ConstrainedKick_Kick")
     }
 
     /// <summary>
@@ -80,7 +80,7 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void FreeChangeAppearance(bool isEnable)
     {
-        Globals.Set_Global_Value(Base.Default + 19320, isEnable ? 0 : 100000);         // joaat("CHARACTER_APPEARANCE_CHARGE")
+        Globals.Set_Global_Value(Base.Default + 18918, isEnable ? 0 : 100000);         // joaat("CHARACTER_APPEARANCE_CHARGE")
     }
 
     /// <summary>
@@ -89,7 +89,7 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void ChangeAppearanceCooldown(bool isEnable)
     {
-        Globals.Set_Global_Value(Base.Default + 19321, isEnable ? 0 : 2880000);         // joaat("CHARACTER_APPEARANCE_COOLDOWN")
+        Globals.Set_Global_Value(Base.Default + 18919, isEnable ? 0 : 2880000);         // joaat("CHARACTER_APPEARANCE_COOLDOWN")
     }
 
     /// <summary>
@@ -111,7 +111,7 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void SellOnNonPublic(bool isEnable)
     {
-        Globals.Set_Global_Value(2684312 + 744, isEnable ? 0 : 1);         // NETWORK::NETWORK_SESSION_GET_PRIVATE_SLOTS()
+        Globals.Set_Global_Value(2684504 + 746, isEnable ? 0 : 1);         // NETWORK::NETWORK_SESSION_GET_PRIVATE_SLOTS()
     }
 
     /// <summary>
@@ -120,7 +120,7 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void PassiveModeCooldown(bool isEnable)
     {
-        Globals.Set_Global_Value(2738587 + 4497, isEnable ? 0 : 1);        // AUDIO::REQUEST_SCRIPT_AUDIO_BANK("DLC_HEI4/DLC_HEI4_Submarine" // _STOPWATCH_RESET(&(Global_2794162.f_4497), false, false);
+        Globals.Set_Global_Value(2738934 + 4512, isEnable ? 0 : 1);        // AUDIO::REQUEST_SCRIPT_AUDIO_BANK("DLC_HEI4/DLC_HEI4_Submarine" // _STOPWATCH_RESET(&(Global_2794162.f_4497), false, false);
         Globals.Set_Global_Value(1963748, isEnable ? 0 : 1);               // joaat("VEHICLE_WEAPON_SUB_MISSILE_HOMING")
     }
 
@@ -131,10 +131,10 @@ public static class Online
     public static void SuicideCooldown(bool isEnable)
     {
         if (isEnable)
-            Globals.Set_Global_Value(Base.oVMYCar + 6937, 0);      // joaat("XPCATEGORY_ACTION_KILLS")
+            Globals.Set_Global_Value(Base.oVMYCar + 6975, 0);      // joaat("XPCATEGORY_ACTION_KILLS")
 
-        Globals.Set_Global_Value(Base.Default + 28685, isEnable ? 1 : 300000);         // 247954694
-        Globals.Set_Global_Value(Base.Default + 28686, isEnable ? 1 : 60000);          // -1771488297
+        Globals.Set_Global_Value(Base.Default + 27968, isEnable ? 1 : 300000);         // 247954694
+        Globals.Set_Global_Value(Base.Default + 27969, isEnable ? 1 : 60000);          // -1771488297
     }
 
     /// <summary>
