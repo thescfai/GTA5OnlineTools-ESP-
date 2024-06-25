@@ -8,11 +8,11 @@ namespace GTA5MenuExtra.Views.HeistsEditor.Casino;
 /// </summary>
 public partial class MoneyView : UserControl
 {
-    private const int player_ratio = 1963945 + 1497 + 736 + 92;
-    private const int player_money = 262145 + 29082;     // -1638885821
+    private const int player_ratio = 1964849 + 1497 + 736 + 92;
+    private const int player_money = 262145 + 28327;     // -1638885821
 
-    private const int ai_ratio = 262145 + 29093;
-    private const int lester_ratio = 262145 + 29068;     // joaat("CH_LESTER_CUT")
+    private const int ai_ratio = 262145 + 28338;
+    private const int lester_ratio = 262145 + 28313;     // joaat("CH_LESTER_CUT")
 
     public MoneyView()
     {
