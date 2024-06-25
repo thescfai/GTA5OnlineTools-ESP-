@@ -13,13 +13,13 @@ public struct Base
 
     public const int SessionSwitchState = 1574589;          // if (AUDIO::IS_AUDIO_SCENE_ACTIVE("MP_POST_MATCH_TRANSITION_SCENE"))
     public const int SessionSwitchCache = 1574589 + 2;
-    public const int SessionTransitionState = 1575008;
-    public const int SessionSwitchType = 1575032;           // NETWORK::NETWORK_SESSION_SET_UNIQUE_CREW_LIMIT(1);
+    public const int SessionTransitionState = 1575011;
+    public const int SessionSwitchType = 1575035;           // NETWORK::NETWORK_SESSION_SET_UNIQUE_CREW_LIMIT(1);
 
     // Vehicle Menus Globals
-    public const int oVMCreate = 2695991;                   // Create any vehicle. STREAMING::REQUEST_MODEL(Global_2694562.f_27.f_66);
-    public const int oVMYCar = 2738587;                     // Get my car. HUD::HIDE_HUD_AND_RADAR_THIS_FRAME();
-    public const int oVGETIn = 2640095;                     // Spawn into vehicle. if (SCRIPT::IS_THREAD_ACTIVE(Global_
+    public const int oVMCreate = 2696212;                   // Create any vehicle. STREAMING::REQUEST_MODEL(Global_2694562.f_27.f_66);
+    public const int oVMYCar = 2738934;                     // Get my car. HUD::HIDE_HUD_AND_RADAR_THIS_FRAME();
+    public const int oVGETIn = 2640096;                     // Spawn into vehicle. if (SCRIPT::IS_THREAD_ACTIVE(Global_
     public const int oVMSlots = 1586504;                    // Get vehicle slots. if (!NETWORK::NETWORK_DOES_NETWORK_ID_EXIST
 
     // Some Player / Network times associated Globals

@@ -99,10 +99,10 @@ public static class Online
     public static async void ModelChange(long hash)
     {
         // else if (!PED::HAS_PED_HEAD_BLEND_FINISHED(PLAYER::PLAYER_PED_ID())
-        Globals.Set_Global_Value(Base.oVGETIn + 62, 1);                 // triggerModelChange
-        Globals.Set_Global_Value(Base.oVGETIn + 49, hash);              // modelChangeHash
+        Globals.Set_Global_Value(Base.oVGETIn + 63, 1);                 // triggerModelChange
+        Globals.Set_Global_Value(Base.oVGETIn + 50, hash);              // modelChangeHash
         await Task.Delay(10);
-        Globals.Set_Global_Value(Base.oVGETIn + 62, 0);
+        Globals.Set_Global_Value(Base.oVGETIn + 63, 0);
     }
 
     /// <summary>
