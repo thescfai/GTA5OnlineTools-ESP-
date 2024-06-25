@@ -23,7 +23,7 @@ public struct Base
     public const int oVMSlots = 1586504;                    // Get vehicle slots. if (!NETWORK::NETWORK_DOES_NETWORK_ID_EXIST
 
     // Some Player / Network times associated Globals
-    public const int oNETTimeHelp = 2672741;                // if (ENTITY::IS_ENTITY_DEAD(vehiclePedIsIn, false) || !VEHICLE::IS_VEHICLE_DRIVEABLE(vehiclePedIsIn, false)
-    public const int oPlayerIDHelp = 2657921;               // NETWORK::NETWORK_SET_CURRENT_SPAWN_LOCATION_OPTION(MISC::GET_HASH_KEY(   // Global_2657704[PLAYER::PLAYER_ID() /*463*/].f_321.f_11 = _INVALID_PLAYER_INDEX_0();
-    public const int oPlayerGA = 2672741;
+    public const int oNETTimeHelp = 2672855;                // if (ENTITY::IS_ENTITY_DEAD(vehiclePedIsIn, false) || !VEHICLE::IS_VEHICLE_DRIVEABLE(vehiclePedIsIn, false)
+    public const int oPlayerIDHelp = 2657971;               // NETWORK::NETWORK_SET_CURRENT_SPAWN_LOCATION_OPTION(MISC::GET_HASH_KEY(   // Global_2657704[PLAYER::PLAYER_ID() /*463*/].f_321.f_11 = _INVALID_PLAYER_INDEX_0();
+    public const int oPlayerGA = 2672855;
 }
