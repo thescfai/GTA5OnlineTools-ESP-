@@ -173,8 +173,8 @@ public static class Vehicle
     /// <param name="index"></param>
     public static void RequestPersonalVehicle(int index)
     {
-        Globals.Set_Global_Value(Base.oVMYCar + 992, index);
-        Globals.Set_Global_Value(Base.oVMYCar + 989, 1);
+        Globals.Set_Global_Value(Base.oVMYCar + 1007, index);
+        Globals.Set_Global_Value(Base.oVMYCar + 1004, 1);
     }
 
     /// <summary>
