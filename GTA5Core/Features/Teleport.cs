@@ -121,17 +121,17 @@ public static class Teleport
             var pCPed = Game.GetCPed();
             if (!Vehicle.IsInVehicle(pCPed))
             {
-                Globals.Set_Global_Value(4521801 + 946 + 0, vector3.X);
-                Globals.Set_Global_Value(4521801 + 946 + 1, vector3.Y);
-                Globals.Set_Global_Value(4521801 + 946 + 2, vector3.Z);
-                Globals.Set_Global_Value(2672741 + 63 + 22, 0);
-                Globals.Set_Global_Value(4521801 + 943, 20);
+                Globals.Set_Global_Value(4521801 + 948 + 0, vector3.X);
+                Globals.Set_Global_Value(4521801 + 948 + 1, vector3.Y);
+                Globals.Set_Global_Value(4521801 + 948 + 2, vector3.Z);
+                Globals.Set_Global_Value(2672855 + 63 + 22, 0);
+                Globals.Set_Global_Value(4521801 + 945, 20);
 
-                while (Globals.Get_Global_Value<int>(4521801 + 943) == 20)
+                while (Globals.Get_Global_Value<int>(4521801 + 945) == 20)
                 {
                 }
 
-                Globals.Set_Global_Value(4521801 + 943, -1);
+                Globals.Set_Global_Value(4521801 + 945, -1);
             }
         }
     }
@@ -144,7 +144,7 @@ public static class Teleport
             return;
 
         // 禁用越界死亡
-        Globals.Set_Global_Value(2738587 + 6920, 1);     // freemode - joaat("TRI_WARP")
+        Globals.Set_Global_Value(2738934 + 6958, 1);     // freemode - "TRI_WARP"
 
         var pCPed = Game.GetCPed();
 

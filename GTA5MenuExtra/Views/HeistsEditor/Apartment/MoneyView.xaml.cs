@@ -8,8 +8,8 @@ namespace GTA5MenuExtra.Views.HeistsEditor.Apartment;
 /// </summary>
 public partial class MoneyView : UserControl
 {
-    private const int apart_ratio = 1930201 + 3008;     // +1 +2 +3 +4
-    private const int apart_money = 262145 + 9314; //HEIST_FLEECA_JOB_CASH_REWARD
+    private const int apart_ratio = 1930926 + 3008;     // +1 +2 +3 +4
+    private const int apart_money = 262145 + 9171; //HEIST_FLEECA_JOB_CASH_REWARD
 
     public MoneyView()
     {

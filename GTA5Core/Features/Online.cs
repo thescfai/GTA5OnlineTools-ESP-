@@ -63,15 +63,15 @@ public static class Online
     public static void AntiAFK(bool isEnable)
     {
         // STATS::PLAYSTATS_IDLE_KICK
-        Globals.Set_Global_Value(Base.Default + 87, isEnable ? 99999999 : 120000);        // 120000     joaat("IDLEKICK_WARNING1") 
-        Globals.Set_Global_Value(Base.Default + 88, isEnable ? 99999999 : 300000);        // 300000     joaat("IDLEKICK_WARNING2")
-        Globals.Set_Global_Value(Base.Default + 89, isEnable ? 99999999 : 600000);        // 600000     joaat("IDLEKICK_WARNING3")
-        Globals.Set_Global_Value(Base.Default + 90, isEnable ? 99999999 : 900000);        // 900000     joaat("IDLEKICK_KICK")
+        Globals.Set_Global_Value(Base.Default + 84, isEnable ? 99999999 : 120000);        // 120000     joaat("IDLEKICK_WARNING1") 
+        Globals.Set_Global_Value(Base.Default + 85, isEnable ? 99999999 : 300000);        // 300000     joaat("IDLEKICK_WARNING2")
+        Globals.Set_Global_Value(Base.Default + 86, isEnable ? 99999999 : 600000);        // 600000     joaat("IDLEKICK_WARNING3")
+        Globals.Set_Global_Value(Base.Default + 87, isEnable ? 99999999 : 900000);        // 900000     joaat("IDLEKICK_KICK")
 
-        Globals.Set_Global_Value(Base.Default + 8426, isEnable ? 2000000000 : 30000);     // 30000      joaat("ConstrainedKick_Warning1")
-        Globals.Set_Global_Value(Base.Default + 8427, isEnable ? 2000000000 : 60000);     // 60000      joaat("ConstrainedKick_Warning2")
-        Globals.Set_Global_Value(Base.Default + 8428, isEnable ? 2000000000 : 90000);     // 90000      joaat("ConstrainedKick_Warning3")
-        Globals.Set_Global_Value(Base.Default + 8429, isEnable ? 2000000000 : 120000);    // 120000     joaat("ConstrainedKick_Kick")
+        Globals.Set_Global_Value(Base.Default + 8413, isEnable ? 2000000000 : 30000);     // 30000      joaat("ConstrainedKick_Warning1")
+        Globals.Set_Global_Value(Base.Default + 8414, isEnable ? 2000000000 : 60000);     // 60000      joaat("ConstrainedKick_Warning2")
+        Globals.Set_Global_Value(Base.Default + 8415, isEnable ? 2000000000 : 90000);     // 90000      joaat("ConstrainedKick_Warning3")
+        Globals.Set_Global_Value(Base.Default + 8416, isEnable ? 2000000000 : 120000);    // 120000     joaat("ConstrainedKick_Kick")
     }
 
     /// <summary>
@@ -80,7 +80,7 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void FreeChangeAppearance(bool isEnable)
     {
-        Globals.Set_Global_Value(Base.Default + 19320, isEnable ? 0 : 100000);         // joaat("CHARACTER_APPEARANCE_CHARGE")
+        Globals.Set_Global_Value(Base.Default + 18918, isEnable ? 0 : 100000);         // joaat("CHARACTER_APPEARANCE_CHARGE")
     }
 
     /// <summary>
@@ -89,7 +89,7 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void ChangeAppearanceCooldown(bool isEnable)
     {
-        Globals.Set_Global_Value(Base.Default + 19321, isEnable ? 0 : 2880000);         // joaat("CHARACTER_APPEARANCE_COOLDOWN")
+        Globals.Set_Global_Value(Base.Default + 18919, isEnable ? 0 : 2880000);         // joaat("CHARACTER_APPEARANCE_COOLDOWN")
     }
 
     /// <summary>
@@ -99,10 +99,10 @@ public static class Online
     public static async void ModelChange(long hash)
     {
         // else if (!PED::HAS_PED_HEAD_BLEND_FINISHED(PLAYER::PLAYER_PED_ID())
-        Globals.Set_Global_Value(Base.oVGETIn + 62, 1);                 // triggerModelChange
-        Globals.Set_Global_Value(Base.oVGETIn + 49, hash);              // modelChangeHash
+        Globals.Set_Global_Value(Base.oVGETIn + 63, 1);                 // triggerModelChange
+        Globals.Set_Global_Value(Base.oVGETIn + 50, hash);              // modelChangeHash
         await Task.Delay(10);
-        Globals.Set_Global_Value(Base.oVGETIn + 62, 0);
+        Globals.Set_Global_Value(Base.oVGETIn + 63, 0);
     }
 
     /// <summary>
@@ -111,7 +111,7 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void SellOnNonPublic(bool isEnable)
     {
-        Globals.Set_Global_Value(2684312 + 744, isEnable ? 0 : 1);         // NETWORK::NETWORK_SESSION_GET_PRIVATE_SLOTS()
+        Globals.Set_Global_Value(2684504 + 746, isEnable ? 0 : 1);         // NETWORK::NETWORK_SESSION_GET_PRIVATE_SLOTS()
     }
 
     /// <summary>
@@ -120,7 +120,7 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void PassiveModeCooldown(bool isEnable)
     {
-        Globals.Set_Global_Value(2738587 + 4497, isEnable ? 0 : 1);        // AUDIO::REQUEST_SCRIPT_AUDIO_BANK("DLC_HEI4/DLC_HEI4_Submarine" // _STOPWATCH_RESET(&(Global_2794162.f_4497), false, false);
+        Globals.Set_Global_Value(2738934 + 4512, isEnable ? 0 : 1);        // AUDIO::REQUEST_SCRIPT_AUDIO_BANK("DLC_HEI4/DLC_HEI4_Submarine" // _STOPWATCH_RESET(&(Global_2794162.f_4497), false, false);
         Globals.Set_Global_Value(1963748, isEnable ? 0 : 1);               // joaat("VEHICLE_WEAPON_SUB_MISSILE_HOMING")
     }
 
@@ -131,10 +131,10 @@ public static class Online
     public static void SuicideCooldown(bool isEnable)
     {
         if (isEnable)
-            Globals.Set_Global_Value(Base.oVMYCar + 6937, 0);      // joaat("XPCATEGORY_ACTION_KILLS")
+            Globals.Set_Global_Value(Base.oVMYCar + 6975, 0);      // joaat("XPCATEGORY_ACTION_KILLS")
 
-        Globals.Set_Global_Value(Base.Default + 28685, isEnable ? 1 : 300000);         // 247954694
-        Globals.Set_Global_Value(Base.Default + 28686, isEnable ? 1 : 60000);          // -1771488297
+        Globals.Set_Global_Value(Base.Default + 27968, isEnable ? 1 : 300000);         // 247954694
+        Globals.Set_Global_Value(Base.Default + 27969, isEnable ? 1 : 60000);          // -1771488297
     }
 
     /// <summary>
@@ -143,7 +143,7 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void OrbitalCooldown(bool isEnable)
     {
-        Globals.Set_Global_Value(Base.Default + 23294, isEnable ? 0 : 2880000);         // -1707434973
+        Globals.Set_Global_Value(Base.Default + 22732, isEnable ? 0 : 2880000);         // -1707434973
     }
 
     /// <summary>
@@ -160,7 +160,7 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void SessionSnow(bool isEnable)
     {
-        Globals.Set_Global_Value(Base.Default + 4575, isEnable ? 1 : 0);            // joaat("turn_snow_on_off")
+        Globals.Set_Global_Value(Base.Default + 4413, isEnable ? 1 : 0);            // joaat("turn_snow_on_off")
     }
 
     /// <summary>
@@ -169,12 +169,12 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void OffRadar(bool isEnable)
     {
-        // Global_2657704[PLAYER::PLAYER_ID() /*463*/].f_210
+        // Global_2657971[PLAYER::PLAYER_ID() /*465*/].f_211 = 0;
         // timeDifference = NETWORK::GET_TIME_DIFFERENCE(NETWORK::GET_NETWORK_TIME(), Global_2672524.f_57);
-        Globals.Set_Global_Value(Base.oPlayerIDHelp + 1 + Globals.GetPlayerID() * 463 + 210, isEnable ? 1 : 0);
+        Globals.Set_Global_Value(Base.oPlayerIDHelp + 1 + Globals.GetPlayerID() * 465 + 211, isEnable ? 1 : 0);
         if (isEnable)
             Globals.Set_Global_Value(Base.oNETTimeHelp + 58, Globals.GetNetworkTime() + 3600000);
-        Globals.Set_Global_Value(Base.oVMYCar + 4667, isEnable ? 3 : 0);
+        Globals.Set_Global_Value(Base.oVMYCar + 4682, isEnable ? 3 : 0);
     }
 
     /// <summary>
@@ -183,10 +183,10 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void GhostOrganization(bool isEnable)
     {
-        Globals.Set_Global_Value(Base.oPlayerIDHelp + 1 + Globals.GetPlayerID() * 463 + 210, isEnable ? 1 : 0);
+        Globals.Set_Global_Value(Base.oPlayerIDHelp + 1 + Globals.GetPlayerID() * 465 + 211, isEnable ? 1 : 0);
         if (isEnable)
             Globals.Set_Global_Value(Base.oNETTimeHelp + 58, Globals.GetNetworkTime() + 3600000);        // iVar0 = NETWORK::GET_TIME_DIFFERENCE(NETWORK::GET_NETWORK_TIME()
-        Globals.Set_Global_Value(Base.oVMYCar + 4667, isEnable ? 4 : 0);
+        Globals.Set_Global_Value(Base.oVMYCar + 4682, isEnable ? 4 : 0);
     }
 
     /// <summary>
@@ -195,9 +195,9 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void BribeOrBlindCops(bool isEnable)
     {
-        Globals.Set_Global_Value(Base.oVMYCar + 4661 + 1, isEnable ? 1 : 0);           // _DISPLAY_HELP_TEXT("FM_LEST_NCPW"
-        Globals.Set_Global_Value(Base.oVMYCar + 4661 + 3, isEnable ? Globals.GetNetworkTime() + 3600000 : 0);
-        Globals.Set_Global_Value(Base.oVMYCar + 4661, isEnable ? 5 : 0);
+        Globals.Set_Global_Value(Base.oVMYCar + 4676 + 1, isEnable ? 1 : 0);           // _DISPLAY_HELP_TEXT("FM_LEST_NCPW"
+        Globals.Set_Global_Value(Base.oVMYCar + 4676 + 3, isEnable ? Globals.GetNetworkTime() + 3600000 : 0);
+        Globals.Set_Global_Value(Base.oVMYCar + 4676, isEnable ? 5 : 0);
     }
 
     /// <summary>
@@ -206,9 +206,9 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void BribeAuthorities(bool isEnable)
     {
-        Globals.Set_Global_Value(Base.oVMYCar + 4661 + 1, isEnable ? 1 : 0);
-        Globals.Set_Global_Value(Base.oVMYCar + 4661 + 3, isEnable ? Globals.GetNetworkTime() + 3600000 : 0);
-        Globals.Set_Global_Value(Base.oVMYCar + 4661, isEnable ? 21 : 0);
+        Globals.Set_Global_Value(Base.oVMYCar + 4676 + 1, isEnable ? 1 : 0);
+        Globals.Set_Global_Value(Base.oVMYCar + 4676 + 3, isEnable ? Globals.GetNetworkTime() + 3600000 : 0);
+        Globals.Set_Global_Value(Base.oVMYCar + 4676, isEnable ? 21 : 0);
     }
 
     /// <summary>
@@ -217,7 +217,7 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void RevealPlayers(bool isEnable)
     {
-        Globals.Set_Global_Value(Base.oPlayerIDHelp + 1 + Globals.GetPlayerID() * 463 + 213, isEnable ? 1 : 0);
+        Globals.Set_Global_Value(Base.oPlayerIDHelp + 1 + Globals.GetPlayerID() * 465 + 214, isEnable ? 1 : 0);
         Globals.Set_Global_Value(Base.oNETTimeHelp + 59, isEnable ? Globals.GetNetworkTime() + 3600000 : 0);
     }
 
@@ -236,7 +236,7 @@ public static class Online
     /// <param name="multiplier"></param>
     public static void APMultiplier(float multiplier)
     {
-        Globals.Set_Global_Value(Base.Default + 26184, multiplier);      // joaat("AP_MULTIPLIER")
+        Globals.Set_Global_Value(Base.Default + 25490, multiplier);      // joaat("AP_MULTIPLIER")
     }
 
     /// <summary>
@@ -245,14 +245,14 @@ public static class Online
     /// <param name="multiplier"></param>
     public static void REPMultiplier(float multiplier)
     {
-        Globals.Set_Global_Value(Base.Default + 31966, multiplier);        // Street Race         街头比赛        -147149995  joaat("TUNER_STREET_RACE_PLACE_XP_MULTIPLIER")
-        Globals.Set_Global_Value(Base.Default + 31967, multiplier);        // Pursuit Race        追逐赛
-        Globals.Set_Global_Value(Base.Default + 31968, multiplier);        // Scramble            攀登
-        Globals.Set_Global_Value(Base.Default + 31969, multiplier);        // Head 2 Head         头对头          1434998920
+        Globals.Set_Global_Value(Base.Default + 30980, multiplier);        // Street Race         街头比赛        -147149995  joaat("TUNER_STREET_RACE_PLACE_XP_MULTIPLIER")
+        Globals.Set_Global_Value(Base.Default + 30981, multiplier);        // Pursuit Race        追逐赛
+        Globals.Set_Global_Value(Base.Default + 30982, multiplier);        // Scramble            攀登
+        Globals.Set_Global_Value(Base.Default + 30983, multiplier);        // Head 2 Head         头对头          1434998920
 
-        Globals.Set_Global_Value(Base.Default + 31971, multiplier);        // LS Car Meet         汽车见面会       1819417801  joaat("TUNER_CARCLUB_TIME_XP_MULTIPLIER")
-        Globals.Set_Global_Value(Base.Default + 31972, multiplier);        // LS Car Meet Track
-        Globals.Set_Global_Value(Base.Default + 31973, multiplier);        // LS Car Meet Cloth Shop
+        Globals.Set_Global_Value(Base.Default + 30985, multiplier);        // LS Car Meet         汽车见面会       1819417801  joaat("TUNER_CARCLUB_TIME_XP_MULTIPLIER")
+        Globals.Set_Global_Value(Base.Default + 30986, multiplier);        // LS Car Meet Track
+        Globals.Set_Global_Value(Base.Default + 30987, multiplier);        // LS Car Meet Cloth Shop
     }
 
     /// <summary>
@@ -262,12 +262,12 @@ public static class Online
     public static void InstantBullShark(bool isEnable)
     {
         if (isEnable)
-            Globals.Set_Global_Value(Base.oNETTimeHelp + 3694, 1);
+            Globals.Set_Global_Value(Base.oNETTimeHelp + 3733, 1);
         else
         {
-            var temp = Globals.Get_Global_Value<int>(Base.oNETTimeHelp + 3694);
+            var temp = Globals.Get_Global_Value<int>(Base.oNETTimeHelp + 3733);
             if (temp != 0)
-                Globals.Set_Global_Value(Base.oNETTimeHelp + 3694, 5);
+                Globals.Set_Global_Value(Base.oNETTimeHelp + 3733, 5);
         }
     }
 
@@ -277,7 +277,7 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void CallBackupHeli(bool isEnable)
     {
-        Globals.Set_Global_Value(Base.oVMYCar + 4491, isEnable ? 1 : 0);   // SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("am_backup_heli")
+        Globals.Set_Global_Value(Base.oVMYCar + 4506, isEnable ? 1 : 0);   // SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("am_backup_heli")
     }
 
     /// <summary>
@@ -286,7 +286,7 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void CallAirstrike(bool isEnable)
     {
-        Globals.Set_Global_Value(Base.oVMYCar + 4492, isEnable ? 1 : 0);   // SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("am_airstrike")
+        Globals.Set_Global_Value(Base.oVMYCar + 4507, isEnable ? 1 : 0);   // SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("am_airstrike")
     }
 
     /// <summary>
@@ -295,7 +295,7 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void CEOSpecialCargo(bool isEnable)
     {
-        Globals.Set_Global_Value(1942640, isEnable ? 1 : 0);           // MISC::GET_RANDOM_INT_IN_RANGE(1, 101);   // Global_1950703 = 1;
+        Globals.Set_Global_Value(1943379, isEnable ? 1 : 0);           // MISC::GET_RANDOM_INT_IN_RANGE(1, 101);   // Global_1950703 = 1;
     }
 
     /// <summary>
@@ -304,7 +304,7 @@ public static class Online
     /// <param name="cargoID"></param>
     public static void CEOCargoType(int cargoID)
     {
-        Globals.Set_Global_Value(1942486, cargoID);                    // MISC::GET_RANDOM_INT_IN_RANGE(1, 101);   // Global_1950549 = num;
+        Globals.Set_Global_Value(1943225, cargoID);                    // MISC::GET_RANDOM_INT_IN_RANGE(1, 101);   // Global_1950549 = num;
     }
 
     /// <summary>
@@ -313,7 +313,7 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void CEOBuyingCratesCooldown(bool isEnable)
     {
-        Globals.Set_Global_Value(Base.Default + 15756, isEnable ? 0 : 300000);          // 153204142 joaat("EXEC_BUY_COOLDOWN")
+        Globals.Set_Global_Value(Base.Default + 15499, isEnable ? 0 : 300000);          // 153204142 joaat("EXEC_BUY_COOLDOWN")
     }
 
     /// <summary>
@@ -322,7 +322,7 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void CEOSellingCratesCooldown(bool isEnable)
     {
-        Globals.Set_Global_Value(Base.Default + 15757, isEnable ? 0 : 1800000);         // 1291620941 joaat("EXEC_SELL_COOLDOWN")
+        Globals.Set_Global_Value(Base.Default + 15500, isEnable ? 0 : 1800000);         // 1291620941 joaat("EXEC_SELL_COOLDOWN")
     }
 
     /// <summary>
@@ -331,11 +331,11 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void BunkerSupplyDelay(bool isEnable)
     {
-        Globals.Set_Global_Value(Base.Default + 21767, isEnable ? 0 : 600);            // -2094564985 joaat("GR_PURCHASE_SUPPLIES_DELAY")
+        Globals.Set_Global_Value(Base.Default + 21274, isEnable ? 0 : 600);            // -2094564985 joaat("GR_PURCHASE_SUPPLIES_DELAY")
     }
 
     /// <summary>
-    /// 解锁地堡所有研究 (临时)
+    /// 解锁地堡所有研究 (临时) //TODO: find a new way or remove it
     /// </summary>
     /// <param name="isEnable"></param>
     public static void UnlockBunkerResearch(bool isEnable)
@@ -349,7 +349,7 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void MCSupplyDelay(bool isEnable)
     {
-        Globals.Set_Global_Value(Base.Default + 19209, isEnable ? 0 : 600);          // 728170457  joaat("WEBSITE_PEGASSI_FAGGIO_SPORT")
+        Globals.Set_Global_Value(Base.Default + 18809, isEnable ? 0 : 600);          // 728170457  joaat("WEBSITE_PEGASSI_FAGGIO_SPORT")
     }
 
     /// <summary>
@@ -367,10 +367,10 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void ExportVehicleDelay(bool isEnable)
     {
-        Globals.Set_Global_Value(Base.Default + 19892, isEnable ? 0 : 1200000);        // 1001423248  tuneables_processing.c
-        Globals.Set_Global_Value(Base.Default + 19893, isEnable ? 0 : 1680000);        // 240134765
-        Globals.Set_Global_Value(Base.Default + 19894, isEnable ? 0 : 2340000);        // 1915379148
-        Globals.Set_Global_Value(Base.Default + 19895, isEnable ? 0 : 2880000);        // -824005590
+        Globals.Set_Global_Value(Base.Default + 19432, isEnable ? 0 : 1200000);        // 1001423248  tuneables_processing.c
+        Globals.Set_Global_Value(Base.Default + 19433, isEnable ? 0 : 1680000);        // 240134765
+        Globals.Set_Global_Value(Base.Default + 19434, isEnable ? 0 : 2340000);        // 1915379148
+        Globals.Set_Global_Value(Base.Default + 19435, isEnable ? 0 : 2880000);        // -824005590
     }
 
     /// <summary>
@@ -378,9 +378,9 @@ public static class Online
     /// </summary>
     public static async void Disconnect()
     {
-        Globals.Set_Global_Value(33106, 1);              // NETWORK::NETWORK_BAIL(1, 0, 0)
+        Globals.Set_Global_Value(33226, 1);              // NETWORK::NETWORK_BAIL(1, 0, 0)
         await Task.Delay(200);
-        Globals.Set_Global_Value(33106, 0);              // return NETWORK::NETWORK_CAN_ACCESS_MULTIPLAYER
+        Globals.Set_Global_Value(33226, 0);              // return NETWORK::NETWORK_CAN_ACCESS_MULTIPLAYER
     }
 
     /// <summary>
@@ -388,11 +388,11 @@ public static class Online
     /// </summary>
     public static async void StopCutscene()
     {
-        Globals.Set_Global_Value(2710132 + 3, 1);        // return MISC::GET_HASH_KEY("AVISA")
-        Globals.Set_Global_Value(1575079, 1);            // NETWORK::NETWORK_TRANSITION_ADD_STAGE(hashKey, 1, num, etsParam0, 0);
+        Globals.Set_Global_Value(2710447 + 3, 1);        // CUTSCENE::REQUEST_CUTSCENE("HS4_SCP_KNCK", 8);
+        Globals.Set_Global_Value(1575083, 1);            // NETWORK::NETWORK_TRANSITION_ADD_STAGE(hashKey, 1, num, etsParam0, 0);
         await Task.Delay(1000);
-        Globals.Set_Global_Value(2710132 + 3, 0);
-        Globals.Set_Global_Value(1575079, 0);
+        Globals.Set_Global_Value(2710447 + 3, 0);
+        Globals.Set_Global_Value(1575083, 0);
     }
 
     /// <summary>
@@ -401,10 +401,10 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void SmugglerRunInDelay(bool isEnable)
     {
-        Globals.Set_Global_Value(Base.Default + 22961, isEnable ? 0 : 120000);         // 1278611667  tuneables_processing.c
-        Globals.Set_Global_Value(Base.Default + 22962, isEnable ? 0 : 180000);         // -1424847540
-        Globals.Set_Global_Value(Base.Default + 22963, isEnable ? 0 : 240000);         // -1817541754
-        Globals.Set_Global_Value(Base.Default + 22964, isEnable ? 0 : 60000);          // 1722502526
+        Globals.Set_Global_Value(Base.Default + 22433, isEnable ? 0 : 120000);         // 1278611667  tuneables_processing.c
+        Globals.Set_Global_Value(Base.Default + 22434, isEnable ? 0 : 180000);         // -1424847540
+        Globals.Set_Global_Value(Base.Default + 22435, isEnable ? 0 : 240000);         // -1817541754
+        Globals.Set_Global_Value(Base.Default + 22436, isEnable ? 0 : 60000);          // 1722502526
     }
 
     /// <summary>
@@ -413,7 +413,7 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void SmugglerRunOutDelay(bool isEnable)
     {
-        Globals.Set_Global_Value(Base.Default + 23002, isEnable ? 0 : 180000);         // -1525481945  tuneables_processing.c
+        Globals.Set_Global_Value(Base.Default + 22474, isEnable ? 0 : 180000);         // -1525481945  tuneables_processing.c
     }
 
     /// <summary>
@@ -422,9 +422,9 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void NightclubOutDelay(bool isEnable)
     {
-        Globals.Set_Global_Value(Base.Default + 24659, isEnable ? 0 : 300000);         // 1763921019  tuneables_processing.c
-        Globals.Set_Global_Value(Base.Default + 24701, isEnable ? 0 : 300000);         // -1004589438  Global_262145.f_24671 = 300000;
-        Globals.Set_Global_Value(Base.Default + 24702, isEnable ? 0 : 300000);         // 464940095
+        Globals.Set_Global_Value(Base.Default + 24026, isEnable ? 0 : 300000);         // 1763921019  tuneables_processing.c
+        Globals.Set_Global_Value(Base.Default + 24067, isEnable ? 0 : 300000);         // -1004589438  Global_262145.f_24671 = 300000;
+        Globals.Set_Global_Value(Base.Default + 24068, isEnable ? 0 : 300000);         // 464940095
     }
 
     /// <summary>
@@ -434,9 +434,9 @@ public static class Online
     public static void CEOWorkCooldown(bool isEnable)
     {
         // CEO工作
-        Globals.Set_Global_Value(Base.Default + 13281, isEnable ? 0 : 300000);       // -1404265088 joaat("GB_COOLDOWN_UNTIL_NEXT_BOSS_WORK")
+        Globals.Set_Global_Value(Base.Default + 13059, isEnable ? 0 : 300000);       // -1404265088 joaat("GB_COOLDOWN_UNTIL_NEXT_BOSS_WORK")
         // 观光客
-        Globals.Set_Global_Value(Base.Default + 13178, isEnable ? 0 : 600000);       // -1911318106 joaat("GB_SIGHTSEER_COOLDOWN")
+        Globals.Set_Global_Value(Base.Default + 12956, isEnable ? 0 : 600000);       // -1911318106 joaat("GB_SIGHTSEER_COOLDOWN")
     }
 
     /// <summary>
@@ -445,11 +445,11 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void ClientJobCooldown(bool isEnable)
     {
-        Globals.Set_Global_Value(Base.Default + 24848 + 0, isEnable ? 0 : 300000);       // Between Jobs           -926426916
-        Globals.Set_Global_Value(Base.Default + 24848 + 1, isEnable ? 0 : 1800000);      // Robbery in Progress    1733390598
-        Globals.Set_Global_Value(Base.Default + 24848 + 2, isEnable ? 0 : 1800000);      // Data Sweep             724724668
-        Globals.Set_Global_Value(Base.Default + 24848 + 3, isEnable ? 0 : 1800000);      // Targeted Data          846317886
-        Globals.Set_Global_Value(Base.Default + 24848 + 4, isEnable ? 0 : 1800000);      // Diamond Shopping       443623246
+        Globals.Set_Global_Value(Base.Default + 24208 + 0, isEnable ? 0 : 300000);       // Between Jobs           -926426916
+        Globals.Set_Global_Value(Base.Default + 24208 + 1, isEnable ? 0 : 1800000);      // Robbery in Progress    1733390598
+        Globals.Set_Global_Value(Base.Default + 24208 + 2, isEnable ? 0 : 1800000);      // Data Sweep             724724668
+        Globals.Set_Global_Value(Base.Default + 24208 + 3, isEnable ? 0 : 1800000);      // Targeted Data          846317886
+        Globals.Set_Global_Value(Base.Default + 24208 + 4, isEnable ? 0 : 1800000);      // Diamond Shopping       443623246
     }
 
     /// <summary>
@@ -458,7 +458,7 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void SecurityHitCooldown(bool isEnable)
     {
-        Globals.Set_Global_Value(Base.Default + 32024, isEnable ? 0 : 300000);           // -1462622971 joaat("FIXER_SECURITY_CONTRACT_COOLDOWN_TIME")
+        Globals.Set_Global_Value(Base.Default + 31038, isEnable ? 0 : 300000);           // -1462622971 joaat("FIXER_SECURITY_CONTRACT_COOLDOWN_TIME")
     }
 
     /// <summary>
@@ -467,7 +467,7 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void PayphoneHitCooldown(bool isEnable)
     {
-        Globals.Set_Global_Value(Base.Default + 32105, isEnable ? 0 : 1200000);          // 1872071131
+        Globals.Set_Global_Value(Base.Default + 31118, isEnable ? 0 : 1200000);          // 1872071131
     }
 
     /// <summary>
@@ -476,7 +476,7 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void TriggerRCBandito(bool isEnable)
     {
-        Globals.Set_Global_Value(Base.oVMYCar + 6918, isEnable ? 1 : 0);                 // if (PED::IS_PED_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID(), true) || PED::IS_PED_GETTING_INTO_A_VEHICLE(PLAYER::PLAYER_PED_ID()))
+        Globals.Set_Global_Value(Base.oVMYCar + 6956, isEnable ? 1 : 0);                 // if (PED::IS_PED_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID(), true) || PED::IS_PED_GETTING_INTO_A_VEHICLE(PLAYER::PLAYER_PED_ID()))
     }
 
     /// <summary>
@@ -485,7 +485,7 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void TriggerMiniTank(bool isEnable)
     {
-        Globals.Set_Global_Value(Base.oVMYCar + 6919, isEnable ? 1 : 0);
+        Globals.Set_Global_Value(Base.oVMYCar + 6957, isEnable ? 1 : 0);
     }
 
     /// <summary>
@@ -496,7 +496,7 @@ public static class Online
     {
         Globals.Set_Global_Value(Base.oNETTimeHelp + 63 + 10, 17);
         await Task.Delay(100);
-        Globals.Set_Global_Value(Base.oVMYCar + 960, 1);
+        Globals.Set_Global_Value(Base.oVMYCar + 975, 1);
     }
 
     /// <summary>
@@ -505,6 +505,6 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void KosatkaMissleCooldown(bool isEnable)
     {
-        Globals.Set_Global_Value(Base.Default + 30464, isEnable ? 0 : 60000);           // joaat("IH_SUBMARINE_MISSILES_COOLDOWN")
+        Globals.Set_Global_Value(Base.Default + 29635, isEnable ? 0 : 60000);           // joaat("IH_SUBMARINE_MISSILES_COOLDOWN")
     }
 }

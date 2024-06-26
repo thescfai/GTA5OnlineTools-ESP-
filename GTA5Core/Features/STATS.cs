@@ -20,23 +20,23 @@ public enum MPStatTypes
 
 public static class STATS
 {
-    private const int character = 1574925;
+    private const int character = 1574926;
 
     private const int stat_data_type = 0x026b66d8;
 
-    private const int stat_structure = 2749147 + 305;
+    private const int stat_structure = 2749550 + 305;
 
-    private const int stat_get_int_outvalue = 2750546 + 267;
+    private const int stat_get_int_outvalue = 2750949 + 269;
 
-    private const int stat_get_int_switch = 1668317;
-    private const int stat_get_int_case = stat_get_int_switch + 1136;   // https://pastebin.com/VbfAmLYB 
-    private const int stat_set_int_case = stat_get_int_switch + 1139;
+    private const int stat_get_int_switch = 1668667;
+    private const int stat_get_int_case = stat_get_int_switch + 1135;   // https://pastebin.com/VbfAmLYB 
+    private const int stat_set_int_case = stat_get_int_switch + 1138;
 
-    private const int stat_set_int_hash = 1679796 + 1 + 3;
+    private const int stat_set_int_hash = 1680145 + 1 + 3;
     private const int stat_set_int_value = 982384 + 5587;
 
-    private const int stat_bool_hash = 1679804 + 1 + 17;
-    private const int stat_bool_value = 2695956;
+    private const int stat_bool_hash = 1680153 + 1 + 17;
+    private const int stat_bool_value = 2696177;
 
     private static long StatGetIntHash()
     {
