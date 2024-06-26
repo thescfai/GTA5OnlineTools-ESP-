@@ -92,9 +92,9 @@ public struct CPlayerInfo                               // 0x10A8
     public const int CrossHairZ = 0x358;
     public const int WantedCanChange = 0x78C;           // float
     public const int NPCIgnore = 0x8C0;                 // int32
-    public const int WantedLevel = 0x8D8;               // int32
+    public const int WantedLevel = 0x8E8;               // int32
     public const int WantedLevelDisplay = 0x8DC;        // int32
-    public const int RunSpeed = 0xD40;                  // float
+    public const int RunSpeed = 0xD50;                  // float
     public const int Stamina = 0xD44;                   // float
     public const int StaminaRegen = 0xD48;              // float
     public const int WeaponDamageMult = 0xD5C;          // float
