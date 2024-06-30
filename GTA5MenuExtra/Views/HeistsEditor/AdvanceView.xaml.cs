@@ -53,19 +53,20 @@ public partial class AdvanceView : UserControl
         if (Locals.LocalAddress("fmmc_launcher") == 0)
             return;
 
-        if (Locals.ReadLocalAddress<int>("fmmc_launcher", 19331 + 34) == 0)
+        if (Locals.ReadLocalAddress<int>("fmmc_launcher", 19709 + 34) == 0)
             return;
 
-        if (Locals.ReadLocalAddress<int>("fmmc_launcher", 19331 + 15) > 1)
+        if (Locals.ReadLocalAddress<int>("fmmc_launcher", 19709 + 15) > 1)
         {
-            Locals.WriteLocalAddress("fmmc_launcher", 19331 + 15, 1);
-            Globals.Set_Global_Value(794744 + 4 + 1 + (Locals.ReadLocalAddress<int>("fmmc_launcher", 19331 + 34) * 89) + 69, 1);
+            Locals.WriteLocalAddress("fmmc_launcher", 19709 + 15, 1);
+            Globals.Set_Global_Value(794744 + 4 + 1 + (Locals.ReadLocalAddress<int>("fmmc_launcher", 19709 + 34) * 89) + 69, 1);
         }
 
-        Globals.Set_Global_Value(4718592 + 3255 + 1, 1);
-        Globals.Set_Global_Value(4718592 + 176675 + 1, 0);
-        Globals.Set_Global_Value(4718592 + 3252, 1);
-        Globals.Set_Global_Value(4718592 + 3253, 1);
+        Globals.Set_Global_Value(4718592 + 3523 + 1, 1);
+        Globals.Set_Global_Value(4718592 + 3529 + 1, 1);
+        Globals.Set_Global_Value(4718592 + 178821 + 1, 0);
+        Globals.Set_Global_Value(4718592 + 3526, 1);
+        Globals.Set_Global_Value(4718592 + 3526 + 1, 1);
     }
 
     //////////////////////////////////////////////////////
