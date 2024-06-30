@@ -21,11 +21,14 @@ public partial class AdvanceView : UserControl
         if (Locals.LocalAddress("fm_mission_controller") == 0)
             return;
 
-        if (Locals.ReadLocalAddress<int>("fm_mission_controller", 0x6510 / 8) == 0)
+        if (Locals.ReadLocalAddress<int>("fm_mission_controller", 3236) == 0)
             return;
 
-        Locals.WriteLocalAddress("fm_mission_controller", 0x3DDC0 / 8, 264666);
-        Locals.WriteLocalAddress("fm_mission_controller", 0x26880 / 8, 12);
+        for (int i = 0; i <= 3; i++)
+        {
+            Locals.WriteLocalAddress("fm_mission_controller", 19746 + 1232 + 1 + i, 264666);
+        }
+        Locals.WriteLocalAddress("fm_mission_controller", 19746, 12);
     }
 
     /// <summary>
@@ -37,11 +40,14 @@ public partial class AdvanceView : UserControl
         if (Locals.LocalAddress("fm_mission_controller_2020") == 0)
             return;
 
-        if (Locals.ReadLocalAddress<int>("fm_mission_controller_2020", 0x24FF8 / 8) == 0)
+        if (Locals.ReadLocalAddress<int>("fm_mission_controller_2020", 19376) == 0)
             return;
 
-        Locals.WriteLocalAddress("fm_mission_controller_2020", 0x3DDC0 / 8, 264666);
-        Locals.WriteLocalAddress("fm_mission_controller_2020", 0x62338 / 8, 9);
+        for (int i = 0; i <= 3; i++)
+        {
+            Locals.WriteLocalAddress("fm_mission_controller_2020", 50150 + 1770 + 1 + i, 264666);
+        }
+        Locals.WriteLocalAddress("fm_mission_controller_2020", 50150, 9);
     }
 
     /// <summary>
