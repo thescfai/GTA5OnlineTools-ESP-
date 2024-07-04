@@ -32,7 +32,7 @@ public static class FileHelper
 
     //////////////////////////////////////////////////////////////////
 
-    public static string Dir_MyDocuments { get; private set; }
+    public static string Dir_CommonAppData { get; private set; }
 
     public static string Dir_Base { get; private set; }
 
@@ -89,10 +89,10 @@ public static class FileHelper
 
     static FileHelper()
     {
-        Dir_MyDocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        Dir_CommonAppData = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
         Dir_AppData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
-        Initialization(Dir_MyDocuments);
+        Initialization(Dir_CommonAppData);
     }
 
     /// <summary>
