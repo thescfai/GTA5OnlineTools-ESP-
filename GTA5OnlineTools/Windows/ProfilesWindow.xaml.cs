@@ -43,7 +43,7 @@ public partial class ProfilesWindow
 
         ClearLogger();
 
-        var path = Path.Combine(FileHelper.Dir_CommonAppData, "Rockstar Games\\GTA V\\Profiles");
+        var path = Path.Combine(FileHelper.Dir_MyDocuments, "Rockstar Games\\GTA V\\Profiles");
         if (!Directory.Exists(path))
         {
             AppendLogger("GTA5故事模式存档路径不存在，操作取消");
