@@ -133,7 +133,7 @@ public class Overlay : IDisposable
         if (e.RecreateResources)
             return;
 
-        _font_YaHei = gfx.CreateFont("Microsoft YaHei", 12);
+        _font_YaHei = gfx.CreateFont("Microsoft YaHei", 14);
 
         _fonts.Add(_font_YaHei);
     }
@@ -217,9 +217,9 @@ public class Overlay : IDisposable
         if (Setting.ESP_InfoText)
         {
             // 绘制帧数文本
-            gfx.DrawText(_font_YaHei, 12, _brush_green, 10, _window.Height / 3, $"FPS：{gfx.FPS}");
+            gfx.DrawText(_font_YaHei, 14, _brush_green, 10, _window.Height / 3, $"FPS：{gfx.FPS}");
             // 绘制信息文本
-            gfx.DrawText(_font_YaHei, 12, _brush_blue, 10, _window.Height / 3 + 30, _infoText.ToString());
+            gfx.DrawText(_font_YaHei, 14, _brush_blue, 10, _window.Height / 3 + 30, _infoText.ToString());
         }
 
         var pAimingPed = Memory.Read<long>(Pointers.AimingPedPTR);
@@ -429,7 +429,7 @@ public class Overlay : IDisposable
                 //var oHostility = Memory.Read<byte>(pCPed + CPed.Hostility);
                 //ped_type = ped_type << 11 >> 25;
 
-                //gfx.DrawText(_font_YaHei, 12, _brush_green, pedPosV2.X, pedPosV2.Y, $"{ped_type}\n{oHostility}");
+                //gfx.DrawText(_font_YaHei, 14, _brush_green, pedPosV2.X, pedPosV2.Y, $"{ped_type}\n{oHostility}");
 #endif
             }
         }
