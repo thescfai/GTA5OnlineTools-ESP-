@@ -141,7 +141,7 @@ public static class Draw
     /// <param name="index"></param>
     public static void Draw2DHealthText(Font font, IBrush brush, Vector2 screenV2, Vector2 boxV2, float health, float maxHealth, int index)
     {
-        _gfx.DrawText(font, 10, brush,
+        _gfx.DrawText(font， 14, brush,
             screenV2.X - boxV2.X / 2,
             screenV2.Y + boxV2.Y / 2 + boxV2.X / 8 - boxV2.X / 10,
             $"[{index}] HP : {health:0}/{maxHealth:0}");
@@ -159,7 +159,7 @@ public static class Draw
     /// <param name="index"></param>
     public static void Draw3DHealthText(Font font, IBrush brush, Vector2 screenV2, Vector2 boxV2, float pedHealth, float pedMaxHealth, int index)
     {
-        _gfx.DrawText(font, 10, brush,
+        _gfx.DrawText(font, 14, brush,
             screenV2.X - boxV2.X / 2,
             screenV2.Y + boxV2.Y / 2 + boxV2.X / 10 + boxV2.X / 10 / 2 + boxV2.X / 8 - boxV2.X / 10,
             $"[{index}] HP : {pedHealth:0}/{pedMaxHealth:0}");
@@ -176,7 +176,7 @@ public static class Draw
     /// <param name="distance"></param>
     public static void Draw2DNameText(Font font, IBrush brush, Vector2 screenV2, Vector2 boxV2, string name, float distance)
     {
-        _gfx.DrawText(font, 10, brush,
+        _gfx.DrawText(font, 14, brush,
             screenV2.X + boxV2.X / 2 + boxV2.X / 8 - boxV2.X / 10,
             screenV2.Y - boxV2.Y / 2,
             $"[{distance:0m}] ID : {name}");
@@ -193,7 +193,7 @@ public static class Draw
     /// <param name="distance"></param>
     public static void Draw3DNameText(Font font, IBrush brush, Vector2 screenV2, Vector2 boxV2, string name, float distance)
     {
-        _gfx.DrawText(font, 10, brush,
+        _gfx.DrawText(font， 14, brush,
             screenV2.X + boxV2.X / 2 + boxV2.X / 10 + boxV2.X / 10 / 2 + boxV2.X / 8 - boxV2.X / 10,
             screenV2.Y - boxV2.Y / 2,
             $"[{distance:0m}] ID : {name}");
@@ -355,7 +355,7 @@ public static class Draw
         var v2Bone = Core.WorldToScreen(Core.GetBonePosition(pCPed, boneMatrix,  boneId));
 
         if (!Core.IsNullVector2(v2Bone))
-            _gfx.DrawText(font, 10, brush, v2Bone.X, v2Bone.Y, $"{boneId}");
+            _gfx.DrawText(font， 14, brush, v2Bone.X, v2Bone.Y, $"{boneId}");
     }
 }
 
